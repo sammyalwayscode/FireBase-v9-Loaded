@@ -7,12 +7,13 @@ const PostBase = () => {
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
 
-  console.log(name, desc);
   const postData = async () => {
     addDoc(collection(db, "base"), {
       school: name,
       description: desc,
     });
+    setName("");
+    setDesc("");
   };
   return (
     <Container>
