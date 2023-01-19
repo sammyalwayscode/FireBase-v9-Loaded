@@ -14,10 +14,7 @@ const EditData = () => {
   const [forSnap, setForSnap] = useState([]);
   const [newId, setNewId] = useState("");
 
-  const GetIdTest = (id) => {
-    console.log("Docunment ID:", id);
-    setNewId(id);
-  };
+
 
   const getSnap = () => {
     const users = collection(db, "shotNameColl");
@@ -30,11 +27,6 @@ const EditData = () => {
     });
   };
 
-  const editData = async (id, newName, newEmail) => {
-    const userDoc = doc(db, "shotNameColl", id);
-    const newField = { newName: newName, newEmail: newEmail };
-    await updateDoc(userDoc, newField);
-  };
 
   const deleteData = async (id) => {
     const userDoc = doc(db, "shotNameColl", id);
